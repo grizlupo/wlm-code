@@ -1,0 +1,27 @@
+{
+    "name": "wlm-il",
+    "displayName": "Instruction List",
+    "description": "Instruction List",
+    "version": "0.0.1",
+    "publisher": "grizlupo",
+    "repository": "git:",
+    "engines": {
+        "vscode": "^1.40.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "wlm-il",
+            "aliases": ["Instruction List"],
+            "extensions": [".il"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "wlm-il",
+            "scopeName": "source.wlm.il",
+            "path": "./syntaxes/il.tmLanguage.json"
+        }]
+    }
+}

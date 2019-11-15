@@ -1,0 +1,49 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "wlm-il",
+	"patterns": [
+		{
+			"name": "comment.line.il",
+			"match": ";(.)*"
+		},
+		{
+			"match": "^\\s*(\\S+)",
+			"captures": {
+				"1": {
+					"name": "keyword.mnemonic.il"
+				}
+			}
+		},
+		{
+			"match": "\\b(\\S+?)(?:(::)(\\S+))?\\b",
+			"captures": {
+				"1": {
+					"name": "entity.name.il"
+				},
+				"2": {
+					"name": "punctuation.separator.colon.il"
+				},
+				"3": {
+					"name": "variable.name.il"
+				}
+			}
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"strings": {
+			"name": "string.quoted.double.il",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.il",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.wlm.il"
+}
